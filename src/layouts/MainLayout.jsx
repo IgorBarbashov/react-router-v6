@@ -1,12 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { CustomLink } from '../components/CustomLink';
 
 const MainLayout = () => {
+    const getClassName = ({ isActive }) => isActive ? 'active-link' : '';
+
     return (
         <>
             <header>
-                <Link to="/">Home</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/about">About</Link>
+                <CustomLink to="/">Home</CustomLink>
+                <CustomLink to="/blog">Blog</CustomLink>
+                <CustomLink to="/about">About</CustomLink>
             </header>
 
             <div className='container'>
